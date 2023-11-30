@@ -1,0 +1,29 @@
+﻿@model List<Catagory>
+<div class="container-fluid">
+    <div >
+        <h1>Genres:</h1>
+        <a class="btn btn-primary" asp-action="create" asp-controller="catagory">Create</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ctg in Model)
+            {
+                <tr>
+                    <td>@ctg.Name</td>
+                    <td>
+                        <a asp-action="update" asp-controller="catagory" asp-route-id="@ctg.Id" class="btn btn-primary">Update</a>
+                        <a asp-action="delete" asp-controller="catagory" asp-route-id="@ctg.Id" class="btn btn-primary ">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
